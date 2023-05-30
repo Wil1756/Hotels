@@ -7,6 +7,8 @@ import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 
 
 export const Icons = {
@@ -18,6 +20,7 @@ export const Icons = {
     FontAwesome5,
     Entypo,
     MaterialIcons,
+    AntDesign
 };
 
 const Icon = ({ type, name, color, size = 24, style, onPress }) => {

@@ -17,7 +17,7 @@ const StartUpScreen = () => {
                 <Image source={require('../../assets/sheraton.png')} style={{ width: 200, height: 200, alignSelf: 'center', opacity: 0.8 }} />
             </View>
 
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
                 <View style={{ height: 4, backgroundColor: 'black', width: '30%' }} />
                 <View style={{ height: 4, backgroundColor: 'black', width: '30%' }} />
                 <View style={{ height: 4, backgroundColor: 'blue', width: '10%' }} />

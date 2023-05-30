@@ -67,15 +67,21 @@ const CustomTabsBtn = ({ item, onPress, accessibilityState }) => {
                                 flexDirection: 'row',
                                 alignItems: 'center',
                                 padding: 5,
-                                borderBottomWidth: 2,
-                                borderBottomColor: focused ? TabsClr.inFocus : TabsClr.primary,
                                 backgroundColor: focused ? null : TabsClr.primary,
                             }}>
-                            <Icon
-                                type={TabArr[item].type}
-                                name={TabArr[item].name}
-                                color={focused ? TabsClr.inFocus : TabsClr.OutOfFocus}
-                            />
+
+
+                            <View style={{
+                                borderBottomWidth: 1,
+                                margin: 2,
+                                borderBottomColor: focused ? TabsClr.inFocus : TabsClr.primary,
+                            }}>
+                                <Icon
+                                    type={TabArr[item].type}
+                                    name={TabArr[item].name}
+                                    color={focused ? TabsClr.inFocus : TabsClr.OutOfFocus}
+                                />
+                            </View>
                             <View style={{ flex: 1 }}>
                                 <Animatable.View ref={textRef}>
                                     {focused && (

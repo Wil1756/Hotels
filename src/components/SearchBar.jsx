@@ -9,12 +9,7 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 
 
-const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleTextChange = (newSearchTerm) => {
-        setSearchTerm(newSearchTerm);
-    };
+const SearchBar = ({ term, onTermChange, onTermSubmit }) => {
 
     return (
         <View>
@@ -22,15 +17,18 @@ const SearchBar = () => {
                 <View style={styles.searchWrapper}>
                     <Ionicons name="search" style={styles.iconStyle} />
                     <TextInput
+                        autoCapitalize='none'
+                        autoCorrect={false}
                         style={styles.searchInput}
-                        value={searchTerm}
-                        onChangeText={handleTextChange}
+                        value={term}
                         placeholder="Where do you want to go ?"
+                        onChangeText={onTermChange}
+                        onEndEditing={onTermSubmit}
                     />
                 </View>
 
                 <TouchableOpacity styles={styles.searchBtn}>
-                    <Ionicons name="options-outline" style={styles.searchBtnImage} size={48} color='white' />
+                    <Ionicons name="options-outline" style={styles.searchBtnImage} size={38} color='white' />
                 </TouchableOpacity>
             </View>
         </View>
@@ -39,7 +37,7 @@ const SearchBar = () => {
 
 const styles = StyleSheet.create({
     iconStyle: {
-        fontSize: 25,
+        fontSize: 24,
         alignSelf: "center",
         marginHorizontal: 15,
     },
@@ -65,6 +63,7 @@ const styles = StyleSheet.create({
         height: "100%",
         paddingHorizontal: 16,
         flex: 1,
+        fontSize: 12,
     },
     searchBtn: {
         width: 55,
@@ -77,10 +76,10 @@ const styles = StyleSheet.create({
     searchBtnImage: {
         width: 50,
         height: 50,
-        // tintColor: 'white',
         borderRadius: 15,
         backgroundColor: 'black',
-        // justifyContent: 'center',
+        padding: 5,
+
     },
 
 });
